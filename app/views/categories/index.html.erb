@@ -5,6 +5,7 @@ admins_<%- model_class = Category -%>
 <table class="table table-striped">
   <thead>
     <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -14,7 +15,8 @@ admins_<%- model_class = Category -%>
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= link_to category.name, admins_category_path(category) %></td>
+        <td><%= link_to category.id, category_path(category) %></td>
+        <td><%= category.name %></td>
         <td><%= category.description %></td>
         <td><%=l category.created_at %></td>
         <td>

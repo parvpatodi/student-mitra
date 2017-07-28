@@ -1,27 +1,27 @@
-admins_<%- model_class = Category -%>
+<%- model_class = Article -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @categories.each do |category| %>
+    <% @articles.each do |article| %>
       <tr>
-        <td><%= link_to category.name, admins_category_path(category) %></td>
-        <td><%= category.description %></td>
-        <td><%=l category.created_at %></td>
+        <td><%= link_to article.title, admins_article_path(article) %></td>
+        <td><%= article.description %></td>
+        <td><%=l article.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_admins_category_path(category), :class => 'btn btn-default btn-xs' %>
+                      edit_admins_article_path(article), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      admins_category_path(category),
+                      admins_article_path(article),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -32,5 +32,5 @@ admins_<%- model_class = Category -%>
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_admins_category_path,
+            new_admins_article_path,
             :class => 'btn btn-primary' %>
