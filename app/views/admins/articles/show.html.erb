@@ -7,7 +7,7 @@ admins_<%- model_class = Article -%>
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @article.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @article.description %></dd>
+  <dd><%= @article.description.html_safe %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
