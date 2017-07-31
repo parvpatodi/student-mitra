@@ -3,4 +3,5 @@ class Article < ActiveRecord::Base
                     length: { minimum: 3 }
   validates :description, presence: true
   belongs_to :category
+  has_many :article_notes
 end

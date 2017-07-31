@@ -1,0 +1,36 @@
+<%- model_class = ArticleNote -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:question) %></th>
+      <th><%= model_class.human_attribute_name(:answer) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @article_notes.each do |article_note| %>
+      <tr>
+        <td><%= link_to article_note.question, admins_article_note_path(article_note) %></td>
+        <td><%= article_note.answer %></td>
+        <td><%=l article_note.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_admins_article_note_path(article_note), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      admins_article_note_path(article_note),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admins_article_note_path,
+            :class => 'btn btn-primary' %>
