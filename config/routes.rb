@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :techwords
   get 'home/index'
   root 'home#index'
 
