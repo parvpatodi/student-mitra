@@ -48,3 +48,4 @@ end
 gem 'twitter-bootstrap-rails'
 gem 'ckeditor'
 gem "ransack"
+gem 'devise'

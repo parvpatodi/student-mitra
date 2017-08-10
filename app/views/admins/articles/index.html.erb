@@ -15,7 +15,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= link_to article.title, admins_article_path(article) %></td>
-        <td><%= article.description %></td>
+        <td><%= article.description.html_safe %></td>
         <td><%=l article.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
