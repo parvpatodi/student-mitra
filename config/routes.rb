@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     end
   end
 
+  post "comments/create_article_comments" => "comments#create_article_comments"
+  post "comments/create_techword_comments" => "comments#create_techword_comments"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

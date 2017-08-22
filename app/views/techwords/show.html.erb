@@ -3,6 +3,10 @@
 </div>
 
 <%= @techword.definition.html_safe %>
+<div class="well">
+  <h1 class="text-center">Comments</h1>
+</div>
+<%= render "comments/new_techword_comment" %>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               root_path, :class => 'btn btn-default'  %>

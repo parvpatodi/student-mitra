@@ -1,0 +1,10 @@
+<%= form_for :create_techword_comments, url: :comments_create_techword_comments, method: 'post' do |f| %>
+  <%= f.hidden_field :techword_id, value: @techword.id %>
+  <%= f.hidden_field :user_id, value: current_user.id if user_signed_in? %>
+  <div class="form-group">
+    <%= f.text_area :comment_text, class: "form-control", rows: "6" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Post your comment", class: "btn btn-primary btn-lg" %>
+  </div>
+<% end %>
