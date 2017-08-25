@@ -46,6 +46,7 @@
   </div>
   <% @article.comments.each do |comment|%>
     <p><strong><%= comment.user.email %> says</strong>: <%= comment.comment_text %> </p>
+    <p><strong> on </strong>: <%= comment.created_at.strftime("%b-%d-%Y") %></p>
   <%end%>
 <%end%>
 

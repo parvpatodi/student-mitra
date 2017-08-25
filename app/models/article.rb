@@ -5,4 +5,5 @@ class Article < ActiveRecord::Base
   belongs_to :category
   has_many :article_notes
   has_many :comments,as: :commentable
+  belongs_to :user
 end

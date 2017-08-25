@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
   def create_article_comments
     @article = Article.find(params[:create_article_comments][:article_id])
     @comment = @article.comments.create(article_comment_params)
+    @author = User.find(@article.user_id)
+    CommentMailer.comment_notification_email(@author, @comment.user).deliver
     redirect_to article_path(@article)
   end
 
