@@ -40,9 +40,19 @@
   </div>
 <% end %>
 
+<% if @article.comments.present? %>
+  <div class="well">
+    <h1 class="text-center">Comments</h1>
+  </div>
+  <% @article.comments.each do |comment|%>
+    <p><strong><%= comment.user.email %> says</strong>: <%= comment.comment_text %> </p>
+  <%end%>
+<%end%>
+
+
 
 <div class="well">
-  <h1 class="text-center">Comments</h1>
+  <h1 class="text-center">Add a new Comment</h1>
 </div>
 
 <%= render "comments/new_article_comment" %>
