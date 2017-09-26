@@ -5,13 +5,15 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:create_article_comments][:article_id])
     @comment = @article.comments.create(article_comment_params)
     @author = User.find(@article.user_id)
-    CommentMailer.comment_notification_email(@author, @comment.user).deliver
+    CommentMailer.comment_notification_email_for_article(@author, @comment.user).deliver
     redirect_to article_path(@article)
   end
 
   def create_techword_comments
     @techword = Techword.find(params[:create_techword_comments][:techword_id])
     @comment = @techword.comments.create(techword_comment_params)
+    @author = User.find(@techword.user_id)
+    CommentMailer.comment_notification_email_for_techword(@author, @comment.user).deliver
     redirect_to techword_path(@techword)
   end
 

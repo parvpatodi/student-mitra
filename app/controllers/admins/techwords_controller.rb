@@ -71,6 +71,6 @@ class Admins::TechwordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def techword_params
-      params.require(:techword).permit(:name, :definition)
+      params.require(:techword).permit(:name, :definition, :user_id)
     end
 end

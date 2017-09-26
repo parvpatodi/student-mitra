@@ -1,4 +1,5 @@
 class Admins::ArticleNotesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_article_note, only: [:show, :edit, :update, :destroy]
 
   def create
