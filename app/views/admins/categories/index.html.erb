@@ -1,4 +1,4 @@
-admins_<%- model_class = Category -%>
+ <%- model_class = Category -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
@@ -15,7 +15,7 @@ admins_<%- model_class = Category -%>
     <% @categories.each do |category| %>
       <tr>
         <td><%= link_to category.name, admins_category_path(category) %></td>
-        <td><%= category.description %></td>
+        <td><%= category.description.html_safe%></td>
         <td><%=l category.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
