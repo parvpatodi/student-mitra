@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :techwords, only: [:index, :show]
-  resources :articles, only:  [:show]
+  resources :articles, only:  [:show,  :index]
 
   get 'home/index'
   root 'home#index'
