@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
+  devise_for :users, controllers:{
+    sessions:        'users/sessions',
+    registrations: 'users/registrations',
+    passwords:      'users/passwords',
+    configurations: 'users/configurations'
+}
 
-  devise_for :users
+
+
   resources :techwords, only: [:index, :show]
   resources :articles, only:  [:show,  :index]
 

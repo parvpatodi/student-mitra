@@ -50,7 +50,7 @@
           <ul class="nav navbar-nav">
             <% if user_signed_in? %>
               <li><%= link_to "Sign Out", destroy_user_session_path,method: :delete%></li>
-                <li><%= link_to "Signed in as: #{current_user.email}", "" %></li>
+                <li><%= link_to "Signed in as: #{current_user.full_name}", "" %></li>
             <% else %>
               <li><%= link_to "Sign In", new_user_session_path %></li>
             <%end%>
