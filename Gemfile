@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.2'
+gem 'rails', '5.0.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -62,3 +62,7 @@ group :production do
 end
 
 gem 'cancancan', '~> 1.10'
+
+gem 'pdfkit', '~> 0.6.2'
+
+gem 'wkhtmltopdf-binary', '~> 0.9.9.3'

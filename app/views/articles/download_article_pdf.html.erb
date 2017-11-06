@@ -1,0 +1,11 @@
+<p id="pdf_link"><%= link_to "Download Article Now", download_article_pdf_article_path(@article,:format => "pdf"), class: "btn btn-primary btn-lg" %></p>
+
+
+<div class="well">
+  <h2 class="text-center"><%= @article.title %></h2>
+</div>
+
+
+<div class="article-details">
+  <%= @article.description.html_safe %>
+</div>
